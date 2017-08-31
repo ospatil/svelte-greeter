@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf8'>
+	<meta name='viewport' content='width=device-width'>
+
+	<title>Svelte app</title>
+
+	<link rel='stylesheet' href='global.css'>
+	<link rel='stylesheet' href='bundle.css'>
+</head>
+
+<body>
+	<script src='bundle.js'></script>
+	<script>
+	document.addEventListener('message', function (ev) {
+		console.log('Message event received: ', ev);
+	});
+</script>
+</body>
+</html>

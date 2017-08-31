@@ -1,0 +1,50 @@
+<div ref:root class="svelte-greeter">
+	<input bind:value="name" type="text" placeholder="Enter your name" name="name" />
+	<button on:click="onClick()">greet</button>
+</div>
+
+<style>
+	.svelte-greeter {
+		font-family: Courier New, Courier, monospace;
+		font-weight: bold;
+		font-size: 20px;
+	}
+
+	.svelte-greeter input {
+		margin: 10px;
+    font-size: 0.8em;
+    color: rgba(0,0,0,.5);
+	}
+
+	.svelte-greeter button {
+    border-style: none;
+    background-color: #FFF3E0;
+    color: rgba(0,0,0,.5);
+    cursor: pointer;
+    font-size: 0.8em;
+    padding: 0.3em;
+  }
+</style>
+
+<script>
+	export default {
+		data() {
+			return {
+				greeting: '',
+				name: ''
+			}
+		},
+		methods: {
+			onClick: function () {
+				console.log('svelte-greeter:onClick: ', event);
+				console.log('Publishing message event up the DOM tree!');
+				const messageEvent = new CustomEvent('message', {
+					detail: this.get('greeting') + ' ' + this.get('name'),
+					bubbles: true,
+					cancelable: true
+				});
+				this.refs.root.dispatchEvent(messageEvent);
+			}
+		}
+	};
+</script>

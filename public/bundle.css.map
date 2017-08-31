@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../src/SvelteGreeter.html"
+  ],
+  "sourcesContent": [
+    "<div ref:root class=\"svelte-greeter\">\n\t<input bind:value=\"name\" type=\"text\" placeholder=\"Enter your name\" name=\"name\" />\n\t<button on:click=\"onClick()\">greet</button>\n</div>\n\n<style>\n\t.svelte-greeter {\n\t\tfont-family: Courier New, Courier, monospace;\n\t\tfont-weight: bold;\n\t\tfont-size: 20px;\n\t}\n\n\t.svelte-greeter input {\n\t\tmargin: 10px;\n    font-size: 0.8em;\n    color: rgba(0,0,0,.5);\n\t}\n\n\t.svelte-greeter button {\n    border-style: none;\n    background-color: #FFF3E0;\n    color: rgba(0,0,0,.5);\n    cursor: pointer;\n    font-size: 0.8em;\n    padding: 0.3em;\n  }\n</style>\n\n<script>\n\texport default {\n\t\tdata() {\n\t\t\treturn {\n\t\t\t\tgreeting: '',\n\t\t\t\tname: ''\n\t\t\t}\n\t\t},\n\t\tmethods: {\n\t\t\tonClick: function () {\n\t\t\t\tconsole.log('svelte-greeter:onClick: ', event);\n\t\t\t\tconsole.log('Publishing message event up the DOM tree!');\n\t\t\t\tconst messageEvent = new CustomEvent('message', {\n\t\t\t\t\tdetail: this.get('greeting') + ' ' + this.get('name'),\n\t\t\t\t\tbubbles: true,\n\t\t\t\t\tcancelable: true\n\t\t\t\t});\n\t\t\t\tthis.refs.root.dispatchEvent(messageEvent);\n\t\t\t}\n\t\t}\n\t};\n</script>\n"
+  ],
+  "names": [],
+  "mappings": "AAMC,eAAe,mBAAC,CAAC,AAChB,WAAW,CAAE,OAAO,CAAC,GAAG,CAAC,CAAC,OAAO,CAAC,CAAC,SAAS,CAC5C,WAAW,CAAE,IAAI,CACjB,SAAS,CAAE,IAAI,AAChB,CAAC,AAED,kCAAe,CAAC,KAAK,mBAAC,CAAC,AACtB,MAAM,CAAE,IAAI,CACV,SAAS,CAAE,KAAK,CAChB,KAAK,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,AACxB,CAAC,AAED,kCAAe,CAAC,MAAM,mBAAC,CAAC,AACrB,YAAY,CAAE,IAAI,CAClB,gBAAgB,CAAE,OAAO,CACzB,KAAK,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CACrB,MAAM,CAAE,OAAO,CACf,SAAS,CAAE,KAAK,CAChB,OAAO,CAAE,KAAK,AAChB,CAAC"
+}
