@@ -39,7 +39,7 @@
 				console.log('svelte-greeter:onClick: ', event);
 				console.log('Publishing message event up the DOM tree!');
 				const messageEvent = new CustomEvent('message', {
-					detail: this.get('greeting') + ' ' + this.get('name'),
+					detail: this.get('greeting') + ' ' + this.get('name') + '!',
 					bubbles: true,
 					cancelable: true
 				});
