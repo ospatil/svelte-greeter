@@ -17,7 +17,7 @@
     "serve": "^6.0.6"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup --config rollup.config.prod.js",
     "dev": "serve public & rollup -c -w",
     "start": "serve public"
   }
