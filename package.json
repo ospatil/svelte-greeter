@@ -1,6 +1,6 @@
 {
   "name": "svelte-greeter",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "SvelteJS greeting message component",
   "main": "public/bundle.js",
   "author": "Omkar Patil <ospatil@gmail.com> (https://github.com/ospatil)",
