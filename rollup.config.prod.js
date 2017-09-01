@@ -9,7 +9,7 @@ const production = !process.env.ROLLUP_WATCH;
 export default {
 	entry: 'src/main.prod.js',
 	dest: 'dist/bundle.js',
-	format: 'iife',
+	format: 'umd',
 	moduleName: 'SvelteGreeter',
 	sourceMap: true,
 	plugins: [
