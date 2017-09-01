@@ -1,1 +1,3 @@
-export * from './SvelteGreeter.html';
+import SvelteGreeter from './SvelteGreeter.html';
+
+export default SvelteGreeter;
