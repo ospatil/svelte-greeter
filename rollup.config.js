@@ -5,11 +5,13 @@ import commonjs from 'rollup-plugin-commonjs';
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-	entry: 'src/main.js',
-	dest: 'public/bundle.js',
-	format: 'iife',
-	moduleName: 'app',
-	sourceMap: true,
+	input: 'src/main.js',
+	output: {
+		file: 'public/bundle.js',
+		format: 'iife',
+		name: 'app',
+		sourcemap: true,
+	},
 	plugins: [
 		svelte({
 			// we'll extract any component CSS out into

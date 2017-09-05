@@ -7,11 +7,13 @@ import uglify from 'rollup-plugin-uglify';
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-	entry: 'src/main.prod.js',
-	dest: 'dist/bundle.js',
-	format: 'umd',
-	moduleName: 'SvelteGreeter',
-	sourceMap: true,
+	input: 'src/main.prod.js',
+	output: {
+		file: 'dist/bundle.js',
+		format: 'umd',
+		name: 'SvelteGreeter',
+		sourcemap: true,
+	},
 	plugins: [
 		svelte({
 			// we'll extract any component CSS out into
@@ -21,7 +23,8 @@ export default {
 			},
 
 			// this results in smaller CSS files
-			cascade: false
+			cascade: false,
+			customElement: true
 		}),
 
 		// If you have external dependencies installed from
