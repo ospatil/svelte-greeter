@@ -1,18 +1,18 @@
 <div ref:root class="svelte-greeter">
-	<input bind:value="name" type="text" placeholder="Enter your name" name="name" />
+	<input class="greeter-input" bind:value="name" type="text" placeholder="Enter your name" name="name" />
 	<button on:click="onClick()">greet</button>
 </div>
 
 <style>
-	.svelte-greeter {
+	.svelte-greeter > * {
 		font-family: Courier New, Courier, monospace;
 		font-weight: bold;
-		font-size: 20px;
+		font-size: 16px;
 	}
 
 	.svelte-greeter input {
 		margin: 10px;
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
     color: rgba(0,0,0,.5);
 	}
 
@@ -21,7 +21,7 @@
     background-color: #FFF3E0;
     color: rgba(0,0,0,.5);
     cursor: pointer;
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
     padding: 0.3em;
   }
 </style>
