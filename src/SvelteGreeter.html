@@ -29,6 +29,7 @@
 <script>
 	export default {
 		tag: 'svelte-greeter',
+		props: ['greeting'],
 		data() {
 			return {
 				greeting: '',
@@ -42,7 +43,8 @@
 				const messageEvent = new CustomEvent('message', {
 					detail: this.get('greeting') + ' ' + this.get('name') + '!',
 					bubbles: true,
-					cancelable: true
+					cancelable: true,
+					composed: true
 				});
 				this.refs.root.dispatchEvent(messageEvent);
 			}
